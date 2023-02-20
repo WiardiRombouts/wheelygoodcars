@@ -11,30 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('occasion', function (Blueprint $table) {
+        Schema::create('cars', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('license_plate');
-            $table->string('brand');
+            $table->string('make');
             $table->string('model');
-            $table->string('fuel')->nullable();
-            $table->string('body')->nullable();
+            $table->decimal('price');
+            $table->decimal('mileage');
             $table->integer('seats')->nullable();
             $table->integer('doors')->nullable();
-            $table->decimal('mileage')->nullable();
             $table->integer('production_year')->nullable();
-            $table->integer('horsepower')->nullable();
-            $table->string('transmission')->nullable();
-            $table->integer('cilinders')->nullable();
-            $table->integer('cilinder_capacity')->nullable();
             $table->integer('weight')->nullable();
             $table->string('color')->nullable();
-            $table->string('description')->nullable();
-            $table->decimal('price')->nullable();
-            $table->string('image')->nullable();
-            $table->tinyInteger('sold');
-            $table->integer('seller_id');
-
-
+            $table->text('image')->nullable();
+            $table->timestamp('sold_at')->nullable();
+            $table->integer('views')->nullable()->default(0);
             $table->timestamps();
         });
     }
@@ -44,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('occasion');
+        Schema::dropIfExists('cars');
     }
 };
