@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware('auth')->group(function () {
-    //
+    Route::get('/cars/show', [CarController::class, 'show_all_cars_page'])->name('show_all_cars_page');
 });
 
 require __DIR__.'/auth.php';
