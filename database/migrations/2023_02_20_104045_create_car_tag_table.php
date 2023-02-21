@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('car_tag', function (Blueprint $table) {
             // $table->id();
-            $table->unsignedBigInteger('tag_id');
-            $table->unsignedBigInteger('car_id');
+            $table->foreignId('tag_id');
+            $table->foreignId('car_id');
         });
     }
 

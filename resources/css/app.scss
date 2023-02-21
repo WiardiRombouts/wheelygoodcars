@@ -7,7 +7,7 @@ $secondary:	hsl(28, 100%, 45%);
 $light:		hsl(30, 23%, 95%);
 $dark:      hsl(28, 10%, 14%);
 $gray:		hsl(28, 10%, 97%);
-
+$border-width: 2px;
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
@@ -20,3 +20,83 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
     justify-content: center;
     align-items: center;
 }
+
+
+// License plate
+@import url('http://fonts.cdnfonts.com/css/kenteken');
+
+::placeholder {
+  color: rgba(0,0,0,.15);
+}
+
+// body {
+//   background: #111;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   flex-direction: column;
+//   gap: 20px;
+//   height: 100vh;
+//   margin: 0;
+//   padding: 0;
+// }
+.kenteken {
+  margin: 4rem 0;
+  position: relative;
+  background: #f3bd00;
+  width: 312px;
+  height: 64px;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0,0,0,.3);
+}
+
+.inset {
+  border: 1px solid #333;
+  border-radius: 4px;
+  width: auto;
+  height: 58px;
+  position: relative;
+  display: flex;
+}
+.inset2 {
+  border: 1px solid #333;
+  border-radius: 4px;
+  width: auto;
+  height: 38px;
+  position: relative;
+  display: flex;
+}
+.kenteken .inset .blue {
+  width: 34px;
+  height: 57px;
+  background: #003399;
+  border-right: 1px solid #333;
+  background-image: url('https://i.ibb.co/r7SZP4h/NLD1-01.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.kenteken .inset input {
+  text-transform: uppercase;
+  background: 0;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: calc(100% - 35px);
+  font-size: 38px;
+  letter-spacing: 3px;
+  line-height: 38px;
+  font-family: 'Kenteken', sans-serif;
+  background-image: url('https://svgshare.com/i/VU4.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+
+

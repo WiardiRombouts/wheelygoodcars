@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/cars/show', [CarController::class, 'show_all_cars_page'])->name('show_all_cars_page');
+    Route::get('/cars/offer/post', [CarController::class, 'show_post_offer_page'])->name('show_post_offer_page');
 });
 
 require __DIR__.'/auth.php';
