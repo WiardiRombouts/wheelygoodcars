@@ -6,6 +6,7 @@
         <div class="card p-4" style="min-width: 50%;">
             <div class="card-body">
                 <h5 class="card-title mb-3">Inloggen</h5>
+                @include('layouts.error')
                 <form action="{{ route('login.do') }}" method="POST">
                     @csrf
                     <div class="mb-3 row">
