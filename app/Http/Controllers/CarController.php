@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
@@ -33,6 +35,7 @@ class CarController extends Controller
 
     public function submit_license_plate(Request $request)
     {
+
         $request;
 
         $license_plate = $request->input('license_plate');
@@ -47,5 +50,25 @@ class CarController extends Controller
     public function process_new_offer(Request $request)
     {
         $request;
+
+        $newCar = new Car();
+
+        $newCar->user_id = Auth::user()->id;
+        $newCar->license_plate = $request->input('license_plate');
+        $newCar->make = $request->input('brand');
+        $newCar->model = $request->input('model');
+        $newCar->price = $request->input('price');
+        $newCar->mileage = $request->input('distance');
+        $newCar->seats = $request->input('seats');
+        $newCar->doors = $request->input('doors');
+        $newCar->production_year = $request->input('production_year');
+        $newCar->weight = $request->input('weight');
+        $newCar->color = $request->input('color');
+
+        $newCar->save();
+
+        return redirect('/');
+        
+
     }
 }

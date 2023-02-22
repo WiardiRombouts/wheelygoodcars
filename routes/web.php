@@ -32,8 +32,9 @@ Route::middleware('auth')->group(function () {
     // POST Routes
 
     // Cars: 
-
+    
     Route::post('/cars/offer/post/process', [CarController::class, 'process_new_offer'])->name('process_new_offer');
+    Route::post('/cars/offer/post/license-plate', [CarController::class, 'submit_license_plate'])->name('submit_license_plate');
 
 });
 
