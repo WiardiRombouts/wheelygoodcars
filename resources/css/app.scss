@@ -22,25 +22,83 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 }
 
 
+
+
+
+
+
+
+//======================================================================================
+// Form
+//======================================================================================
+
+
+
+.new-offer-heading h1{
+  margin: 2rem 0;
+  font-weight: bold;
+  color: white;
+  background-color: white;
+  text-shadow: -1.5px -1.5px 0 $primary, 1.5px -1.5px 0 $primary, -1.5px 1.5px 0 $primary, 1.5px 1.5px 0 $primary;
+
+}
+
+.car-offer-form{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: white;
+  text-shadow: -1.5px -1.5px 0 $primary, 1.5px -1.5px 0 $primary, -1.5px 1.5px 0 $primary, 1.5px 1.5px 0 $primary;
+
+}
+
+.car-offer-form label{
+  width: 30rem;
+  margin: 0.6rem 0;
+}
+
+.submit-offer-form input{
+  width: 200%;
+  padding: 0.7rem;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: white;
+  text-shadow: -1.5px -1.5px 0 $primary, 1.5px -1.5px 0 $primary, -1.5px 1.5px 0 $primary, 1.5px 1.5px 0 $primary;
+
+}
+
+.input-group-addon-euro{
+  width: 2.5rem;
+  font-weight: bold;
+}
+.input-group-addon-kg{
+  width: 3.4rem;
+  font-weight: bold;
+}
+
+.input-group-addon-euro input{
+  font-weight: bold;
+}
+.input-group-addon-kg input{
+  font-weight: bold;
+}
+
+
+
+
+
+//======================================================================================
 // License plate
+//======================================================================================
+
 @import url('http://fonts.cdnfonts.com/css/kenteken');
 
 ::placeholder {
   color: rgba(0,0,0,.15);
 }
 
-// body {
-//   background: #111;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-wrap: wrap;
-//   flex-direction: column;
-//   gap: 20px;
-//   height: 100vh;
-//   margin: 0;
-//   padding: 0;
-// }
 .kenteken {
   margin: 4rem 0;
   position: relative;
