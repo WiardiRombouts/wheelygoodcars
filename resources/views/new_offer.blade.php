@@ -10,9 +10,10 @@
             <div class="kenteken">
                 <div class="inset">
                 <div class="blue"></div>
-                <input type="text" name="license_plate" value="{{ $license_plate }}" disabled="" required=""/> 
+                <input type="text" name="license_plate" value="{{ $license_plate }}" required=""/> 
                 </div>
             </div>
+            
             <div class="car-offer-form">
                 <div class="row">
                     <div class="col-12">
@@ -29,7 +30,7 @@
                     </div>
                     <div class="col-4">
                         <label for="doors">Aantal deuren</label>
-                        <input type="number" class="form-control" name="model" id="doors">
+                        <input type="number" class="form-control" name="doors" id="doors">
                     </div>
                     <div class="col-4">
                         <label for="weight">Massa rijklaar</label>

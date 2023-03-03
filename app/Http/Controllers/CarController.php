@@ -10,7 +10,11 @@ class CarController extends Controller
 {
     public function show_all_cars_page()
     {
-        return view('cars');
+        $cars = Car::all();
+
+        return view('cars', [
+            'cars' => $cars,
+        ]);
     }
     
     public function show_post_offer_page()
@@ -53,6 +57,7 @@ class CarController extends Controller
 
         $newCar = new Car();
 
+        
         $newCar->user_id = Auth::user()->id;
         $newCar->license_plate = $request->input('license_plate');
         $newCar->make = $request->input('brand');
@@ -70,5 +75,13 @@ class CarController extends Controller
         return redirect('/');
         
 
+    }
+
+    public function show_personal_cars(){
+        $cars = Car::all();
+
+        return view('personal_cars', [
+            'cars' => $cars,
+        ]);
     }
 }

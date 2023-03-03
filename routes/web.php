@@ -27,7 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/cars/show', [CarController::class, 'show_all_cars_page'])->name('show_all_cars_page');
     Route::get('/cars/offer/post', [CarController::class, 'show_post_offer_page'])->name('show_post_offer_page');
     Route::get('/cars/offer/post/new/{license_plate}', [CarController::class, 'show_new_offer_page'])->name('show_new_offer_page');
-
+    Route::get('/cars/show/personal', [CarController::class, 'show_personal_cars'])->name('show_personal_cars');
+    
 
     // POST Routes
 
