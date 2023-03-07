@@ -16,17 +16,17 @@ class CarController extends Controller
             'cars' => $cars,
         ]);
     }
-    
+
     public function show_post_offer_page()
     {
         return view('post_offer');
     }
-    
+
     public function show_new_offer_page($license_plate)
     {
         return view('new_offer', compact($license_plate));
     }
-    
+
     public function submit_license_plate_as(Request $request)
     {
         $license_plate =  $request->input('license_plate');
@@ -43,9 +43,9 @@ class CarController extends Controller
         $request;
 
         $license_plate = $request->input('license_plate');
-        
+
         // $subTitle = "Thank you";
-  
+
         return view('new_offer', compact('license_plate'));
     }
 
@@ -57,7 +57,7 @@ class CarController extends Controller
 
         $newCar = new Car();
 
-        
+
         $newCar->user_id = Auth::user()->id;
         $newCar->license_plate = $request->input('license_plate');
         $newCar->make = $request->input('brand');
@@ -73,11 +73,10 @@ class CarController extends Controller
         $newCar->save();
 
         return redirect('/');
-        
-
     }
 
-    public function show_personal_cars(){
+    public function show_personal_cars()
+    {
         $cars = Car::all();
 
         return view('personal_cars', [

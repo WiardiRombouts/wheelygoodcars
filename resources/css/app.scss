@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 // Variables
-$primary:	hsl(28, 100%, 50%);
-$secondary:	hsl(28, 100%, 45%);
-$light:		hsl(30, 23%, 95%);
-$dark:      hsl(28, 10%, 14%);
-$gray:		hsl(28, 10%, 97%);
+$primary: hsl(28, 100%, 50%);
+$secondary: hsl(28, 100%, 45%);
+$light: hsl(30, 23%, 95%);
+$dark: hsl(28, 10%, 14%);
+$gray: hsl(28, 10%, 97%);
 $border-width: 2px;
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
@@ -14,11 +14,11 @@ $border-width: 2px;
 // Typography
 $font-family-sans-serif: 'Open Sans', sans-serif;
 
-.fullheight{
-    min-height: calc(100vh - 56px) !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.fullheight {
+  min-height: calc(100vh - 56px) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -38,7 +38,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 
 
-.new-offer-heading h1{
+.new-offer-heading h1 {
   margin: 2rem 0;
   font-weight: bold;
   color: white;
@@ -47,7 +47,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 }
 
-.car-offer-form{
+.car-offer-form {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
@@ -56,12 +56,12 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 }
 
-.car-offer-form label{
+.car-offer-form label {
   width: 30rem;
   margin: 0.6rem 0;
 }
 
-.submit-offer-form input{
+.submit-offer-form input {
   width: 200%;
   padding: 0.7rem;
   margin: 1rem 0;
@@ -73,19 +73,21 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 }
 
-.input-group-addon-euro{
+.input-group-addon-euro {
   width: 2.5rem;
   font-weight: bold;
 }
-.input-group-addon-kg{
+
+.input-group-addon-kg {
   width: 3.4rem;
   font-weight: bold;
 }
 
-.input-group-addon-euro input{
+.input-group-addon-euro input {
   font-weight: bold;
 }
-.input-group-addon-kg input{
+
+.input-group-addon-kg input {
   font-weight: bold;
 }
 
@@ -100,7 +102,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 @import url('http://fonts.cdnfonts.com/css/kenteken');
 
 ::placeholder {
-  color: rgba(0,0,0,.15);
+  color: rgba(0, 0, 0, .15);
 }
 
 .kenteken {
@@ -111,7 +113,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
   height: 64px;
   padding: 3px;
   border-radius: 5px;
-  box-shadow: 0 0 6px rgba(0,0,0,.3);
+  box-shadow: 0 0 6px rgba(0, 0, 0, .3);
 }
 
 .inset {
@@ -122,6 +124,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
   position: relative;
   display: flex;
 }
+
 .inset2 {
   border: 1px solid #333;
   border-radius: 4px;
@@ -130,6 +133,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
   position: relative;
   display: flex;
 }
+
 .kenteken .inset .blue {
   width: 34px;
   height: 57px;
@@ -160,11 +164,10 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
   background-size: auto;
 }
 
-.table-item{
+.table-item {
   margin-top: 30px;
 }
 
-.license_plate_in_list{
+.license_plate_in_list {
   margin: 10px;
 }
-

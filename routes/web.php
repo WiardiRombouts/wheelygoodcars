@@ -20,7 +20,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware('auth')->group(function () {
-    
+
     // GET Routes
 
     // Cars:
@@ -28,15 +28,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/cars/offer/post', [CarController::class, 'show_post_offer_page'])->name('show_post_offer_page');
     Route::get('/cars/offer/post/new/{license_plate}', [CarController::class, 'show_new_offer_page'])->name('show_new_offer_page');
     Route::get('/cars/show/personal', [CarController::class, 'show_personal_cars'])->name('show_personal_cars');
-    
+
 
     // POST Routes
 
     // Cars: 
-    
+
     Route::post('/cars/offer/post/process', [CarController::class, 'process_new_offer'])->name('process_new_offer');
     Route::post('/cars/offer/post/license-plate', [CarController::class, 'submit_license_plate'])->name('submit_license_plate');
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
