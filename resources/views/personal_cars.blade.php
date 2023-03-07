@@ -17,7 +17,7 @@
                         <div class="kenteken license_plate_in_list">
                             <div class="inset">
                             <div class="blue"></div>
-                            <input type="text" name="license_plate" value="{{$car->license_plate}}" required=""/> 
+                            <input type="text" name="license_plate" disabled="" value="{{$car->license_plate}}" required=""/> 
                             </div>
                         </div>
                     </td>
