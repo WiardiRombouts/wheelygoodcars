@@ -84,10 +84,8 @@ class CarController extends Controller
 
     public function show_personal_cars()
     {
-        $cars = Car::all()->where('user_id' == Auth::id());
+        $myCars = Auth::user()->cars;
 
-        return view('personal_cars', [
-            'cars' => $cars,
-        ]);
+        return view('personal_cars')->with('cars', $myCars);
     }
 }
