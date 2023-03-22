@@ -4,7 +4,6 @@
     
     <tbody>
         @foreach ($cars as $car)
-            {{-- @if ($car->user_id == Auth::id()) --}}
                 <tr class="table-striped">
                     <th class="table_item car_picture">
                         @if ($car->image == NULL)
@@ -35,7 +34,6 @@
                         </form>    
                     </div></td>
                 </tr>
-            {{-- @endif --}}
         @endforeach
 
        
