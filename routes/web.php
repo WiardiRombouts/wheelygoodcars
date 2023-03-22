@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/cars/offer/post/process', [CarController::class, 'process_new_offer'])->name('process_new_offer');
     Route::post('/cars/offer/post/license-plate', [CarController::class, 'submit_license_plate'])->name('submit_license_plate');
+
+    Route::delete('/cars/{car_id}/destroy', [CarController::class, 'destroy'])->name('car.destroy');
 });
 
 require __DIR__ . '/auth.php';

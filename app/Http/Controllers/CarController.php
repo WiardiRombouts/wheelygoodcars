@@ -6,6 +6,7 @@ use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class CarController extends Controller
 {
     public function show_all_cars_page()
@@ -49,7 +50,12 @@ class CarController extends Controller
         return view('new_offer', compact('license_plate'));
     }
 
+    public function destroy($car_id){
+        $ticket = Car::findorFail($car_id);
+        $ticket->delete();
 
+        return back();
+    }
 
     public function process_new_offer(Request $request)
     {
@@ -58,6 +64,7 @@ class CarController extends Controller
         $newCar = new Car();
 
 
+        
         $newCar->user_id = Auth::user()->id;
         $newCar->license_plate = $request->input('license_plate');
         $newCar->make = $request->input('brand');
@@ -77,7 +84,7 @@ class CarController extends Controller
 
     public function show_personal_cars()
     {
-        $cars = Car::all();
+        $cars = Car::all()->where('user_id' == Auth::id());
 
         return view('personal_cars', [
             'cars' => $cars,

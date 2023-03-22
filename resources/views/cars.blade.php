@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('main')
-    <table class="table car_overview">
+    <table class="table car_overview table-hover">
 
         <tbody>
 
 
             @foreach ($cars as $car)
-                <tr>
+                <tr class="table-striped">
                     <th class="table_item car_picture">
                         @if ($car->image == null)
                             <img src="{{ URL::asset('/images/placeholder-small.jpg') }}" alt="profile Pic" height="85"

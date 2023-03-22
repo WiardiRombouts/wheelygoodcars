@@ -33,7 +33,7 @@
                         <input type="number" class="form-control" name="doors" id="doors">
                     </div>
                     <div class="col-4">
-                        <label for="weight">Massa rijklaar</label>
+                        <label for="weight">Gewicht</label>
                         <input type="number" class="form-control" name="weight" id="weight">
                     </div>
                     <div class="col-6">
