@@ -25,8 +25,8 @@ Route::middleware('auth')->group(function () {
 
     // Cars:
     Route::get('/cars/show', [CarController::class, 'show_all_cars_page'])->name('show_all_cars_page');
-    Route::get('/cars/offer/post', [CarController::class, 'show_post_offer_page'])->name('show_post_offer_page');
-    Route::get('/cars/offer/post/new/{license_plate}', [CarController::class, 'show_new_offer_page'])->name('show_new_offer_page');
+    Route::get('/cars/offer/post', [CarController::class, 'show_new_license_plate_page'])->name('show_new_license_plate_page');
+    Route::get('/cars/offer/post/new/{license_plate}', [CarController::class, 'show_new_car_form'])->name('multistep_form_step_2');
     Route::get('/cars/show/personal', [CarController::class, 'show_personal_cars'])->name('show_personal_cars');
 
 
@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
 
     // Cars: 
 
-    Route::post('/cars/offer/post/process', [CarController::class, 'process_new_offer'])->name('process_new_offer');
+    Route::post('/cars/offer/post/process', [CarController::class, 'process_new_car'])->name('process_new_car');
     Route::post('/cars/offer/post/license-plate', [CarController::class, 'submit_license_plate'])->name('submit_license_plate');
 
     Route::delete('/cars/{car_id}/destroy', [CarController::class, 'destroy'])->name('car.destroy');

@@ -18,25 +18,25 @@ class CarController extends Controller
         ]);
     }
 
-    public function show_post_offer_page()
+    public function show_new_license_plate_page()
     {
-        return view('post_offer');
+        return view('license_plate');
     }
 
-    public function show_new_offer_page($license_plate)
+    public function show_new_car_form($license_plate)
     {
-        return view('new_offer', compact($license_plate));
+        return view('multiform_step_2', compact($license_plate));
     }
 
-    public function submit_license_plate_as(Request $request)
-    {
-        $license_plate =  $request->input('license_plate');
+    // public function submit_license_plate_as(Request $request)
+    // {
+    //     $license_plate =  $request->input('license_plate');
 
-        // return redirect('show_new_offer_page', compact('license_plate'));
-        return view('new_offer', [
-            'license_plate' => $license_plate,
-        ]);
-    }
+    //     // return redirect('show_new_offer_page', compact('license_plate'));
+    //     return view('new_offer', [
+    //         'license_plate' => $license_plate,
+    //     ]);
+    // }
 
     public function submit_license_plate(Request $request)
     {
@@ -46,8 +46,8 @@ class CarController extends Controller
         $license_plate = $request->input('license_plate');
 
         // $subTitle = "Thank you";
-
-        return view('new_offer', compact('license_plate'));
+        
+        return view('multiform_step_2', compact('license_plate'));
     }
 
     public function destroy($car_id){
@@ -57,7 +57,7 @@ class CarController extends Controller
         return back();
     }
 
-    public function process_new_offer(Request $request)
+    public function process_new_car(Request $request)
     {
         $request;
 

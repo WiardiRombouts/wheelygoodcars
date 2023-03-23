@@ -29,7 +29,7 @@
                         <li class="nav-item"><a class="nav-link text-light" href="{{ Route('show_personal_cars') }}">Mijn
                                 aanbod</a></li>
                         <li class="nav-item"><a class="nav-link text-light"
-                                href="{{ Route('show_post_offer_page') }}">Aanbod plaatsen</a></li>
+                                href="{{ Route('show_new_license_plate_page') }}">Aanbod plaatsen</a></li>
                     @endauth
                     </li>
                 </ul>

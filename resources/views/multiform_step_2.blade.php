@@ -2,7 +2,7 @@
 
 @section('main')
     <div class="d-flex justify-content-end">
-        <form action="{{ Route('process_new_offer') }}" method="post">
+        <form action="{{ Route('process_new_car') }}" method="post">
             @csrf
             <div class="new-offer-heading">
                 <h1>Nieuw aanbod</h1>
