@@ -102,10 +102,16 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 // License plate submit:
 
-.submit-license-plate{
-  
+.status_text{
+  margin: 0.8rem;
+  padding: 0.2rem;
 }
-
+.status_text .sold p{
+  border: #003399 solid 1px;
+}
+.status_text .for_sale{
+  border: #003399 solid 1px;
+}
 
 @import url('http://fonts.cdnfonts.com/css/kenteken');
 
