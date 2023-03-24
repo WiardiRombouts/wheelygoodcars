@@ -21,12 +21,7 @@
                                     required="" />
                             </div>
                             <div class="sale_status">
-                                @isset($car->sold_at)
-                                    <p class="status_text border border-dark rounded text-light bg-danger">VERKOCHT</p>
-                                @endisset
-                                @empty($car->sold_at)
-                                    <p class="status_text border border-dark rounded text-light bg-success">TE KOOP</p>
-                                @endempty
+                                @livewire('sales-status', ['car' => $car])
                             </div>
                         </div>
                     </td>
@@ -43,7 +38,7 @@
                 </tr>
             @endforeach
 
-
         </tbody>
     </table>
+    @livewireScripts
 @endsection

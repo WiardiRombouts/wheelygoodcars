@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -76,6 +77,12 @@ class CarController extends Controller
         $newCar->production_year = $request->input('production_year');
         $newCar->weight = $request->input('weight');
         $newCar->color = $request->input('color');
+
+        Storage::makeDirectory('public/images');
+        $src = Storage::putFile('public/images', $request->file('image'));
+        $src = str_replace('public', 'storage', $src);
+        $newCar->image = $src;
+        
 
         $newCar->save();
 

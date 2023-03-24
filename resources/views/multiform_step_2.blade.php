@@ -2,7 +2,7 @@
 
 @section('main')
     <div class="d-flex justify-content-end">
-        <form action="{{ Route('process_new_car') }}" method="post">
+        <form action="{{ Route('process_new_car') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="new-offer-heading">
                 <h1>Nieuw aanbod</h1>
@@ -36,14 +36,18 @@
                         <label for="weight">Gewicht</label>
                         <input type="number" class="form-control" name="weight" id="weight">
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <label for="production_year">Jaar van productie</label>
                         <input type="number" class="form-control" name="production_year" id="production_year">
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <label for="color">kleur</label>
                         <input type="text" class="form-control" name="color" id="color">
                     </div> 
+                    <div class="col-4">
+                        <label for="image">Foto</label>
+                        <input type="file" class="form-control" name="image" id="image" accept="image/png, image/gif, image/jpeg">
+                    </div>
 
 
                     <div class="form-group">

@@ -22,10 +22,10 @@
                             </div>
                             <div class="sale-status">
                                 @isset($car->sold_at)
-                                    <p class="status_text border border-dark rounded text-light bg-danger">VERKOCHT</p>
+                                    <p class="status_text border border-dark rounded text-light bg-danger">verkocht</p>
                                 @endisset
                                 @empty($car->sold_at)
-                                    <p class="status_text border border-dark rounded text-light bg-success">TE KOOP</p>
+                                    <p class="status_text border border-dark rounded text-light bg-success">te koop</p>
                                 @endempty
                             </div>
                         </div>
