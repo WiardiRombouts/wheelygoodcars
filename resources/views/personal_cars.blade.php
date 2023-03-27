@@ -10,8 +10,8 @@
                             <img src="{{ URL::asset('/images/placeholder-small.jpg') }}" alt="profile Pic" height="120"
                                 width="135">
                         @else
-                        <img src="{{ URL::asset('/images/placeholder-small.jpg') }}" alt="profile Pic" height="120"
-                        width="135">
+                        <img src="{{asset($car->image)}}" alt="" height="120"
+                            width="135">
                         @endif
                     </th>
                     <td class="table_item">
