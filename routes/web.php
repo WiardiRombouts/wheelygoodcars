@@ -19,12 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/cars/show', [CarController::class, 'show_all_cars_page'])->name('show_all_cars_page');
+
+
 Route::middleware('auth')->group(function () {
 
     // GET Routes
 
     // Cars:
-    Route::get('/cars/show', [CarController::class, 'show_all_cars_page'])->name('show_all_cars_page');
     Route::get('/cars/offer/post', [CarController::class, 'show_new_license_plate_page'])->name('show_new_license_plate_page');
     Route::get('/cars/offer/post/new/{license_plate}', [CarController::class, 'show_new_car_form'])->name('multistep_form_step_2');
     Route::get('/cars/show/personal', [CarController::class, 'show_personal_cars'])->name('show_personal_cars');
