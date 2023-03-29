@@ -37,6 +37,13 @@
                             <p>{{ $car->make }} {{ $car->model }}</p>
                         </div>
                     </td>
+                    <td>
+                        <div class="table-item">
+                            <div class="car-tags">
+                                <span class="badge text-dark bg-danger">Example</span>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             @endforeach
 
