@@ -10,8 +10,8 @@ class Tag extends Model
 {
     use HasFactory;
 
-    public function users(): BelongsToMany
+    public function cars(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'car_tag');
+        return $this->belongsToMany(Car::class, 'car_tag');
     }
 }
