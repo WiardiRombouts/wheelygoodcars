@@ -47,11 +47,12 @@ class CarController extends Controller
         $license_plate = $request->input('license_plate');
 
         // $subTitle = "Thank you";
-        
+
         return view('multiform_step_2', compact('license_plate'));
     }
 
-    public function destroy($car_id){
+    public function destroy($car_id)
+    {
         $ticket = Car::findorFail($car_id);
         $ticket->delete();
 
@@ -65,7 +66,7 @@ class CarController extends Controller
         $newCar = new Car();
 
 
-        
+
         $newCar->user_id = Auth::user()->id;
         $newCar->license_plate = $request->input('license_plate');
         $newCar->make = $request->input('brand');
@@ -82,7 +83,7 @@ class CarController extends Controller
         $src = Storage::putFile('public/images', $request->file('image'));
         $src = str_replace('public', 'storage', $src);
         $newCar->image = $src;
-        
+
 
         $newCar->save();
 
@@ -96,5 +97,12 @@ class CarController extends Controller
         return view('personal_cars')->with('cars', $myCars);
     }
 
-    
+    public function car_details($car_id)
+    {
+        $cars = Car::all();
+
+        return view('car_details', [
+            'car' => $cars,
+        ]);
+    }
 }
