@@ -10,8 +10,7 @@
                             <img src="{{ URL::asset('/images/placeholder-small.jpg') }}" alt="profile Pic" height="120"
                                 width="135">
                         @else
-                        <img src="{{asset($car->image)}}" alt="" height="120"
-                            width="135">
+                            <img src="{{ asset($car->image) }}" alt="" height="120" width="135">
                         @endif
                     </th>
                     <td class="table_item">
@@ -28,7 +27,7 @@
                     </td>
                     <td>
                         <div class="table-item">
-                            <p>{{ $car->price }}</p>
+                            <p>€{{ $car->price }}</p>
                         </div>
                     </td>
                     <td>
@@ -36,15 +35,17 @@
                             <p>{{ $car->make }} {{ $car->model }}</p>
                         </div>
                     </td>
+
                     <td>
                         <div class="table-item">
                             <form action="{{ Route('car.destroy', $car->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn"><i class="bi bi-trash"></i></button>
+                                <button type="submit" class="btn"><i class="bi bi-trash text-danger"></i></button>
                             </form>
                         </div>
                     </td>
+
                 </tr>
                 @livewireScripts
             @endforeach

@@ -102,14 +102,16 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 // License plate submit:
 
-.status_text{
+.status_text {
   margin: 0.8rem;
   padding: 0.2rem;
 }
-.status_text .sold p{
+
+.status_text .sold p {
   border: #003399 solid 1px;
 }
-.status_text .for_sale{
+
+.status_text .for_sale {
   border: #003399 solid 1px;
 }
 
@@ -184,4 +186,8 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 .license_plate_in_list {
   margin: 10px;
+}
+
+.license_plate_in_card {
+  margin: 0;
 }

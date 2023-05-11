@@ -95,4 +95,6 @@ class CarController extends Controller
 
         return view('personal_cars')->with('cars', $myCars);
     }
+
+    
 }
