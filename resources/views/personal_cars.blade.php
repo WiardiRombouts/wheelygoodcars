@@ -21,8 +21,8 @@
                                 <input type="text" name="license_plate" disabled="" value="{{ $car->license_plate }}"
                                     required="" />
                             </div>
-                            <div class="sale-status">
-                                
+                            <div class="sale_status">
+                                @livewire('sales-status', ['car' => $car])
                             </div>
                         </div>
                     </td>
@@ -46,6 +46,7 @@
                         </div>
                     </td>
                 </tr>
+                @livewireScripts
             @endforeach
 
 
