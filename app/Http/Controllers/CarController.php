@@ -99,10 +99,9 @@ class CarController extends Controller
 
     public function car_details($car_id)
     {
-        $cars = Car::all();
-
-        return view('car_details', [
-            'car' => $cars,
-        ]);
+        $car = Car::find($car_id);
+        
+        return view('car_details', ['car', $car]);
+        // return view('car_details', compact('car'));
     }
 }
