@@ -134,18 +134,18 @@ class CarController extends Controller
                 $doors = $temp[0]->aantal_deuren;
                 $weight = $temp[0]->massa_rijklaar;
                 $color = $temp[0]->eerste_kleur;
-                
+
                 // Production year response
-                $production_year_string = ''. $temp[0]->datum_eerste_toelating[0] . $temp[0]->datum_eerste_toelating[1] . $temp[0]->datum_eerste_toelating[2] . $temp[0]->datum_eerste_toelating[3];
+                $production_year_string = '' . $temp[0]->datum_eerste_toelating[0] . $temp[0]->datum_eerste_toelating[1] . $temp[0]->datum_eerste_toelating[2] . $temp[0]->datum_eerste_toelating[3];
                 $production_year = (int) $production_year_string;
                 // $production_year = $temp[0]->
-                
+
                 // return redirect()->route('multistep_form_step_2', compact('api_car'));
                 return view('multiform_step_2', compact('license_plate', 'make', 'model', 'seats', 'doors', 'weight', 'production_year',  'color'));
         }
     }
 
-    
+
 
     public function process_new_car(Request $request)
     {
@@ -167,10 +167,12 @@ class CarController extends Controller
         $newCar->weight = $request->input('weight');
         $newCar->color = $request->input('color');
 
-        Storage::makeDirectory('public/images');
-        $src = Storage::putFile('public/images', $request->file('image'));
-        $src = str_replace('public', 'storage', $src);
-        $newCar->image = $src;
+        if ($request->input('image')) {
+            Storage::makeDirectory('public/images');
+            $src = Storage::putFile('public/images', $request->file('image'));
+            $src = str_replace('public', 'storage', $src);
+            $newCar->image = $src;
+        }
 
 
         $newCar->save();
