@@ -28,7 +28,7 @@ function timeAgo($timestamp)
 @section('main')
     {{-- CAR DETAILS CARD --}}
 
-    <div class="card mb-3" style="max-width: 1300px;">
+    <div class="card mb-3" style="max-width: 1300px; margin-top: 5%">
         <div class="row g-0">
             <div class="col-md-6">
 
