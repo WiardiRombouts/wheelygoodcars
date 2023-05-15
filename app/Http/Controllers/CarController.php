@@ -39,17 +39,7 @@ class CarController extends Controller
     //     ]);
     // }
 
-    public function submit_license_plate(Request $request)
-    {
 
-        $request;
-
-        $license_plate = $request->input('license_plate');
-
-        // $subTitle = "Thank you";
-
-        return view('multiform_step_2', compact('license_plate'));
-    }
 
     public function destroy($car_id)
     {
@@ -100,7 +90,76 @@ class CarController extends Controller
     public function car_details($car_id)
     {
         $car = Car::find($car_id);
-        
+
         return view('car_details', compact('car'));
+    }
+
+    // public function submit_license_plate(Request $request)
+    // {
+
+    //     $request;
+
+    //     $license_plate = $request->input('license_plate');
+
+    //     // $subTitle = "Thank you";
+
+    //     return view('multiform_step_2', compact('license_plate'));
+    // }
+
+    // RDW API Functions
+    public function submit_license_plate(Request $request)
+    {
+        $request;
+        $license_plate = $request->input('license_plate');
+        $app_token = 'UEa1jOQL14JOaeu9oeYk71Xfa';
+        // $url = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken='. strtoupper($license_plate);
+        $url = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=NJ745N';
+        $count = 0;
+        
+        $method = "GET";
+        $data = false;
+        
+        $curl = curl_init();
+        // Set url
+        curl_setopt($curl, CURLOPT_URL, $url);
+
+        switch ($method) {
+            case 'GET':
+                // make sure its a GET
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
+                // Set header authorization
+                curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+                    'Accept: application/json',
+                    'Accept: application/pdf',
+                    'X-App-Token: '. $app_token,
+                ));
+                $response = curl_exec($curl); // Automatically shows the response
+                // $response = json_decode($response, true);
+
+                curl_close($curl);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+                if (curl_exec($curl) === false) {
+                    $temp = curl_error($curl);
+                } else {
+                    $temp = json_decode(curl_exec($curl));
+                }
+                curl_close($curl);
+
+                if (isset($temp->d->__next)) {
+                    $url = $temp->d->__next;
+                } else {
+                    $url = null;
+                }
+
+                if (isset($temp->d->results)) {
+                    $response[$count] = $temp->d->results;
+                    $count++;
+                }
+                echo '<pre>';
+                var_dump($temp[0]);
+                echo '</pre>';
+                die();
+        }
     }
 }
