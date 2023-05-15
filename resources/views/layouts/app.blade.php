@@ -24,6 +24,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-primary" href="https://getbootstrap.com/">Bootstrap link</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="{{ Route('show_all_cars_page') }}">Alle
                             auto's</a></li>
                     @auth

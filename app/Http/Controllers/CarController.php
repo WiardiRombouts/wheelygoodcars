@@ -101,7 +101,6 @@ class CarController extends Controller
     {
         $car = Car::find($car_id);
         
-        return view('car_details', ['car', $car]);
-        // return view('car_details', compact('car'));
+        return view('car_details', compact('car'));
     }
 }
