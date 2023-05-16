@@ -33,7 +33,7 @@ function timeAgo($timestamp)
             <div class="col-md-6">
 
                 @if ($car->image == null)
-                    <img src="{{ URL::asset('/images/placeholder-small.jpg') }}" alt="Placeholder image">
+                    <img src="{{ URL::asset('/images/placeholder-small.jpg') }}" alt="Placeholder image" width="640px">
                 @else
                     <img src="{{ asset($car->image) }}" alt="Image" width="640px">
                 @endif
