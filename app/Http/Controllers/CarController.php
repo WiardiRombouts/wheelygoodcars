@@ -26,19 +26,6 @@ class CarController extends Controller
     }
 
 
-
-    // public function submit_license_plate_as(Request $request)
-    // {
-    //     $license_plate =  $request->input('license_plate');
-
-    //     // return redirect('show_new_offer_page', compact('license_plate'));
-    //     return view('new_offer', [
-    //         'license_plate' => $license_plate,
-    //     ]);
-    // }
-
-
-
     public function destroy($car_id)
     {
         $ticket = Car::findorFail($car_id);
